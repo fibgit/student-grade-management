@@ -16,10 +16,18 @@ This project demonstrates practical application of Java object-oriented programm
 
 ## Current Functionality
 
+### Phase 1 - Core Data Models ✅
 - Create student, course, and grade objects
 - Store grade information with automatic percentage calculation
 - Display formatted student and grade information
 - Immutable design ensures data integrity
+
+### Phase 2 - Interactive Console Application ✅
+- **Complete menu-driven interface** with 9 interactive options
+- **Full CRUD operations** for students, courses, and grades
+- **Robust input validation** with graceful error handling
+- **Professional user experience** with clear prompts and feedback
+- **Real-time interaction** - users can perform multiple operations in one session
 
 ## Class Structure
 
@@ -59,31 +67,85 @@ Grade
 
 ### Running the Application
 1. Clone the repository
-2. Open in your Java IDE
+2. Open in your Java IDE (IntelliJ IDEA recommended)
 3. Run `GradeManagementSystem.java`
+4. **Interact with the menu system:**
+    - Use options 1-3 to view existing data
+    - Use options 4-6 to add new students, courses, and grades
+    - Use options 7-8 to search for specific records
+    - Use option 9 to exit the application
 
-### Sample Output
+### Key Features
+- **Input Validation**: Handles invalid menu choices and data entry gracefully
+- **Error Prevention**: Validates student and course existence before adding grades
+- **User-Friendly**: Clear prompts, helpful error messages, and intuitive navigation
+- **Data Integrity**: Prevents duplicate student IDs and course codes
+- **Professional Interface**: Consistent formatting and professional user experience
+
+### Interactive Menu System
 ```
-=== Student Grade Management System Test ===
+Welcome to Student Grade Management System!
+=========================================
 
-Student: Student{name='Alice Johnson', studentId='S001', email='alice@university.edu'}
-Course: Course{courseCode='CS101', courseName='Introduction to Programming', credits=3.0}
+=== Student Grade Management System ===
+1. Display All Students
+2. Display All Courses
+3. Display All Grades
+4. Add New Student
+5. Add New Course
+6. Add New Grade
+7. Find Student by ID
+8. Find Course by Code
+9. Exit
+Choose an option (1-9): _
+```
 
-Grades:
-Grade{studentId='S001', courseCode='CS101', assignmentName='Midterm Exam', score=87.5, maxPoints=100.0, percentage=87.5%}
-Grade{studentId='S001', courseCode='CS101', assignmentName='Homework 1', score=95.0, maxPoints=100.0, percentage=95.0%}
-Grade{studentId='S001', courseCode='CS101', assignmentName='Final Project', score=92.0, maxPoints=100.0, percentage=92.0%}
+### Feature Demonstrations
+
+**Adding a New Student:**
+```
+Choose an option (1-9): 4
+Enter student name: 
+John Doe
+Enter student ID: 
+S003
+Enter email: 
+john@university.edu
+Added new student: Student{name='John Doe', studentId='S003', email='john@university.edu'}
+```
+
+**Finding a Student:**
+```
+Choose an option (1-9): 7
+Enter student ID: 
+S001
+Student found: Student{name='Alice Johnson', studentId='S001', email='alice@university.edu'}
+```
+
+**Adding a Grade:**
+```
+Choose an option (1-9): 6
+Enter student ID: 
+S001
+Enter course code: 
+CS101
+Enter assignment name: 
+Final Exam
+Enter score: 
+88.5
+Enter max points: 
+100
+Grade recorded successfully!
 ```
 
 ## Planned Features (Upcoming Phases)
 
-### Phase 2 - Basic Operations
-- [ ] Add/remove students and courses
-- [ ] Record grades for students
-- [ ] Console menu system
-- [ ] Input validation and error handling
-
-### Phase 3 - Advanced Calculations
+### Phase 3 - Advanced Calculations ⏳
+- [ ] GPA calculation (weighted by credits)
+- [ ] Course averages for individual students
+- [ ] Class statistics and reporting
+- [ ] Grade letter assignment (A-F scale)
+- [ ] Semester/term organization
 - [ ] GPA calculation (weighted by credits)
 - [ ] Course averages for individual students
 - [ ] Class statistics and reporting
