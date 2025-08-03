@@ -31,7 +31,7 @@ public class GradeManager {
 
     // Display all students
     public void displayAllStudents() {
-        System.out.println("\n=== All Students ===");
+        System.out.println("=== All Students ===");
         if (students.isEmpty()) {
             System.out.println("No students found.");
             return;
@@ -49,12 +49,12 @@ public class GradeManager {
                 return student;
             }
         }
-        return null; // Not found
+        return null;
     }
 
     // Find course by code (HashMap lookup - fast!)
     public Course findCourseByCode(String courseCode) {
-        return courses.get(courseCode); // HashMap magic!
+        return courses.get(courseCode);
     }
     // Add a new student
     public boolean addStudent(Student student) {
@@ -71,7 +71,7 @@ public class GradeManager {
 
     // Add a new course
     public boolean addCourse(Course course) {
-        // Check if course code already exists
+        // Check course code already exists
         if (courses.containsKey(course.getCourseCode())) {
             System.out.println("Error: Course " + course.getCourseCode() + " already exists!");
             return false;
@@ -81,5 +81,41 @@ public class GradeManager {
         System.out.println("Course added successfully: " + course.getCourseName());
         return true;
     }
+
+    // Display all courses
+    public void displayAllCourses() {
+        System.out.println("=== All Courses ===");
+        if (courses.isEmpty()) {
+            System.out.println("No courses found.");
+            return;
+        }
+
+        for (Course course : courses.values()) {
+            System.out.println(course);
+        }
+    }
+
+    // Display all grades
+    public void displayAllGrades() {
+        System.out.println("=== All Grades ===");
+        if (grades.isEmpty()) {
+            System.out.println("No grades found.");
+            return;
+        }
+
+        for (Grade grade : grades) {
+            System.out.println(grade);
+        }
+    }
+
+    public boolean addGrade(Grade grade) {
+        // Could add validation here (e.g., prevent duplicate grades)
+        grades.add(grade);
+        System.out.println("Grade added successfully: " + grade);
+        return true;
+    }
+
+
+
 
 }
