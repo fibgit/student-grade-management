@@ -56,6 +56,10 @@ public class GradeManager {
     public Course findCourseByCode(String courseCode) {
         return courses.get(courseCode);
     }
+
+    public List<Grade> getGrades() {
+        return grades;
+    }
     // Add a new student
     public boolean addStudent(Student student) {
         // Check if student ID already exists
