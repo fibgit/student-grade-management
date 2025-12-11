@@ -1,4 +1,4 @@
-package com.grademanagment.student_grade_api;
+package com.grademanagement.student_grade_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

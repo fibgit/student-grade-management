@@ -1,4 +1,4 @@
-package com.grademanagment.student_grade_api.model;
+package com.grademanagement.student_grade_api.model;
 
 public class Course {
 

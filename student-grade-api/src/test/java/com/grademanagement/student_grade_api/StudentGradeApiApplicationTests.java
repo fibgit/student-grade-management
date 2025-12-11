@@ -1,4 +1,4 @@
-package com.grademanagment.student_grade_api;
+package com.grademanagement.student_grade_api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

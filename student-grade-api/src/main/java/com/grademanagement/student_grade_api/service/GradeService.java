@@ -1,14 +1,15 @@
-package com.grademanagment.student_grade_api.service;
+package com.grademanagement.student_grade_api.service;
 
-import com.grademanagment.student_grade_api.model.Course;
-import com.grademanagment.student_grade_api.model.Grade;
-import com.grademanagment.student_grade_api.model.Student;
+import com.grademanagement.student_grade_api.model.Course;
+import com.grademanagement.student_grade_api.model.Grade;
+import com.grademanagement.student_grade_api.model.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class GradeService {
@@ -129,6 +130,29 @@ public class GradeService {
         System.out.println("Grade added successfully: " + grade);
         return true;
     }
+
+    public List<Student> getAllStudents() {
+        return new ArrayList<>(students);
+    }
+
+    public boolean deleteStudent(String studentId) {
+        return students.removeIf(s -> s.getStudentId().equals(studentId));
+    }
+
+    public List<Course> getAllCourses() {
+        return new ArrayList<>(courses.values());
+    }
+
+    public List<Grade> getGradesByStudentId(String studentId) {
+        return grades.stream()
+                .filter(g -> g.getStudentId().equals(studentId))
+                .collect(Collectors.toList());
+    }
+
+
+
+
+
 
 
 
